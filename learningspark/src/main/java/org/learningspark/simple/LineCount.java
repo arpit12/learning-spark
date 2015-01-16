@@ -5,9 +5,9 @@ import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 
 /**
- * File Copy program
+ * Line Count example
  */
-public class FileCopy {
+public class LineCount {
 
   public static void main(String[] args) {
     SparkConf sparkConf = new SparkConf().setAppName("File Copy");
@@ -17,8 +17,10 @@ public class FileCopy {
     // Read the source file
     JavaRDD<String> input = sparkContext.textFile(args[0]);
 
-    // Save the file to specified location
-    input.saveAsTextFile(args[1]);
+    // Gets the number of entries in the RDD
+    long count = input.count();
+
+    System.out.println(String.format("Total lines in %s is %d",args[0],count));
   }
 
 }
