@@ -1,6 +1,5 @@
 package org.learningspark.simple;
 
-import com.google.common.base.Strings;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
