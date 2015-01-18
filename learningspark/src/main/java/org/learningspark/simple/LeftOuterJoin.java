@@ -1,6 +1,7 @@
 package org.learningspark.simple;
 
 import au.com.bytecode.opencsv.CSVReader;
+import com.google.common.base.Optional;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
@@ -12,10 +13,9 @@ import java.io.IOException;
 import java.io.StringReader;
 
 /**
- * Inner Join example
+ * Left Outer Join Example
  */
-public class InnerJoin {
-
+public class LeftOuterJoin {
   public static void main(String[] args) {
     SparkConf sparkConf = new SparkConf().setAppName("File Copy");
     JavaSparkContext sparkContext = new JavaSparkContext(sparkConf);
@@ -65,11 +65,10 @@ public class InnerJoin {
 
 
     // Lets go for an inner join, to hold data only for Ads which received an impression
-    JavaPairRDD<String, Tuple2<String, String>> joinedData = adsRDD.join(impressionsRDD);
+    JavaPairRDD<String, Tuple2<String, Optional<String>>> joinedData = adsRDD.leftOuterJoin(impressionsRDD);
 
 
-    joinedData.saveAsTextFile("./output");
+    joinedData.saveAsTextFile("./output-outerjoin");
 
   }
-
 }
