@@ -11,7 +11,7 @@ import org.apache.spark.api.java.function.Function;
 public class LineCountWithFiltering {
 
   public static void main(String[] args) {
-    SparkConf sparkConf = new SparkConf().setAppName("File Copy");
+    SparkConf sparkConf = new SparkConf().setAppName("Line Count With Filtering");
     JavaSparkContext sparkContext = new JavaSparkContext(sparkConf);
 
 

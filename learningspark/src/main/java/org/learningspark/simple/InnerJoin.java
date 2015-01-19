@@ -17,7 +17,7 @@ import java.io.StringReader;
 public class InnerJoin {
 
   public static void main(String[] args) {
-    SparkConf sparkConf = new SparkConf().setAppName("File Copy");
+    SparkConf sparkConf = new SparkConf().setAppName("Inner Join");
     JavaSparkContext sparkContext = new JavaSparkContext(sparkConf);
 
 

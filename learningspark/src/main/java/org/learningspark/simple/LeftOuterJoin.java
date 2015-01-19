@@ -17,7 +17,7 @@ import java.io.StringReader;
  */
 public class LeftOuterJoin {
   public static void main(String[] args) {
-    SparkConf sparkConf = new SparkConf().setAppName("File Copy");
+    SparkConf sparkConf = new SparkConf().setAppName("Left Outer Join");
     JavaSparkContext sparkContext = new JavaSparkContext(sparkConf);
 
 

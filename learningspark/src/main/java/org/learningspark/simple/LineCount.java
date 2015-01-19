@@ -10,7 +10,7 @@ import org.apache.spark.api.java.JavaSparkContext;
 public class LineCount {
 
   public static void main(String[] args) {
-    SparkConf sparkConf = new SparkConf().setAppName("File Copy");
+    SparkConf sparkConf = new SparkConf().setAppName("Line Count");
     JavaSparkContext sparkContext = new JavaSparkContext(sparkConf);
 
 

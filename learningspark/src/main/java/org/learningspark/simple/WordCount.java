@@ -14,7 +14,7 @@ import java.util.Arrays;
  */
 public class WordCount {
   public static void main(String[] args) {
-    SparkConf sparkConf = new SparkConf().setAppName("File Copy");
+    SparkConf sparkConf = new SparkConf().setAppName("Word Count");
     JavaSparkContext sparkContext = new JavaSparkContext(sparkConf);
 
 
